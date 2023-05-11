@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="redis_springboot" />
+        <module name="ThreadLearn" />
+        <module name="SpringTest" />
+        <module name="demo" />
+        <module name="redis_project" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="1.8" />
+      <module name="eureka-server" target="17" />
+      <module name="redis_demo" target="17" />
+      <module name="redis_project" target="1.8" />
+      <module name="redis_springboot" target="1.8" />
+      <module name="springcloud" target="17" />
+      <module name="SpringTest" target="1.8" />
+      <module name="springTest" target="8" />
+      <module name="ThreadLearn" target="9" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="javaLearn" options="--add-modules java.base" />
+      <module name="redis_demo" options="" />
+      <module name="redis_project" options="-parameters" />
+      <module name="redis_springboot" options="-parameters" />
+    </option>
+  </component>
+</project>

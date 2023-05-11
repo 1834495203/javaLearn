@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.redis_project.mapper.UserMapper">
+
+    <resultMap id="resultUserMap" type="com.example.redis_project.entity.User">
+        <result column="profile_name" property="profileName"/>
+    </resultMap>
+
+    <insert id="addUser" keyProperty="uid" useGeneratedKeys="true">
+        insert into sp_user (phone, password, profile_name, gender) values
+            (#{phone}, #{password}, #{profileName}, #{gender})
+    </insert>
+
+</mapper>
