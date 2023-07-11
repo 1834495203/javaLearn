@@ -1,10 +1,12 @@
 package leetcode;
 
 import leetcode.model.ListNode;
+import leetcode.model.TreeNode;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.concurrent.*;
 
 public class SolutionTest {
@@ -12,10 +14,8 @@ public class SolutionTest {
     private static final Object LOCK1 = new Object();
 
     public static void main(String[] args) throws IOException {
-        Solution s = new PossibleSolution();
-
-        SolutionTest st = new SolutionTest();
-        st.t1();
+        Solution solution = new PossibleSolution();
+        solution.topKFrequent(new int[]{4,1,-1,2,-1,2,3}, 2);
     }
 
     public void t1(){

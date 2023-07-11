@@ -1,10 +1,10 @@
 package leetcode;
 
 import leetcode.model.ListNode;
+import leetcode.model.TreeNode;
 
 import java.io.Serializable;
 import java.util.*;
-import java.util.stream.IntStream;
 
 public class PossibleSolution implements Solution, Serializable {
     @Override
@@ -150,6 +150,82 @@ public class PossibleSolution implements Solution, Serializable {
     public String addBinary(String a, String b) {
 
         return null;
+    }
+
+    @Override
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int[] clone = nums1.clone();
+        int i = 0, j = 0, k = 0;
+        while (i < m && j < n){
+            if (clone[i] > nums2[j]) nums1[k++] = nums2[j++];
+            else if (clone[i] <= nums2[j]) nums1[k++] = clone[i++];
+        }
+        int t = i+j;
+        if (i != m) for (int l = i; l < m; l++) nums1[t++] = clone[l];
+        else if (j != n) for (int l = j; l < n; l++) nums1[t++] = nums2[l];
+    }
+
+    @Override
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode p = head;
+        while (p != null && p.next != null){
+            if (p.val == p.next.val) p.next = p.next.next;
+            else p = p.next;
+        }
+        return head;
+    }
+
+    @Override
+    public int climbStairs(int n) {
+        int p, q = 0, r = 1;
+        for (int i = 1; i <= n; ++i) {
+            p = q;
+            q = r;
+            r = p + q;
+        }
+        return r;
+    }
+
+    @Override
+    public int mySqrt(int x) {
+        if (x == 0) return 0;
+        int ans = (int) Math.exp(0.5 * Math.log(x));
+        return (long) (ans + 1) * (ans + 1) <= x ? ans + 1 : ans;
+    }
+
+    private final List<Integer> arr = new ArrayList<>();
+
+    private void tree(TreeNode root){
+        if (root != null){
+            tree(root.left);
+            if (root.left == null && root.right != null) arr.add(-1);
+            arr.add(root.val);
+            tree(root.right);
+            if (root.right == null && root.left != null) arr.add(-1);
+        }
+    }
+
+    @Override
+    public boolean isSymmetric(TreeNode root) {
+        tree(root);
+        System.out.println(arr);
+        for (int i = 0; i < arr.size()/2; i++)
+            if (!arr.get(arr.size()-i-1).equals(arr.get(i))) return false;
+        return true;
+    }
+
+    @Override
+    public int[] topKFrequent(int[] nums, int k) {
+        Arrays.sort(nums);
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : nums) set.add(num);
+        int[] ints = new int[k];
+        int i = 0;
+        for (Object o : set.toArray()) {
+            if (i == k) break;
+            ints[i++] = (int) o;
+        }
+        return ints;
     }
 }
 

@@ -1,6 +1,7 @@
 package leetcode;
 
 import leetcode.model.ListNode;
+import leetcode.model.TreeNode;
 
 public interface Solution {
 
@@ -100,4 +101,53 @@ public interface Solution {
      * @return 它们的和
      */
     String addBinary(String a, String b);
+
+    /**
+     * 给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2,
+     * 另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
+     * 请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
+     * @param nums1 整数数组
+     * @param m 元素数目
+     * @param nums2 整数数组
+     * @param n 元素数目
+     */
+    void merge(int[] nums1, int m, int[] nums2, int n);
+
+    /**
+     * 给定一个已排序的链表的头 head ， 删除所有重复的元素，使每个元素只出现一次 。返回 已排序的链表 。
+     * @param head 给定一个已排序的链表的头 head
+     * @return 返回 已排序的链表
+     */
+    ListNode deleteDuplicates(ListNode head);
+
+    /**
+     * 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+     * 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+     * @param n n 阶你才能到达楼顶。1 或 2 个台阶。
+     * @return 多少种不同的方法可以爬到楼顶
+     */
+    int climbStairs(int n);
+
+    /**
+     * 给你一个非负整数 x ，计算并返回 x 的 算术平方根 。
+     * 由于返回类型是整数，结果只保留 整数部分 ，小数部分将被 舍去 。
+     * @param x 给你一个非负整数 x。
+     * @return 由于返回类型是整数，结果只保留 整数部分 ，小数部分将被 舍去 。
+     */
+    int mySqrt(int x);
+
+    /**
+     * 给你一个二叉树的根节点 root ， 检查它是否轴对称。
+     * @param root 二叉树的根节点 root
+     * @return 是否轴对称
+     */
+    boolean isSymmetric(TreeNode root);
+
+    /**
+     * 给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按 任意顺序 返回答案。
+     * @param nums 整数数组
+     * @param k 频率前 k 高的元素
+     * @return 请你返回其中出现频率前 k 高的元素
+     */
+    int[] topKFrequent(int[] nums, int k);
 }
